@@ -31,5 +31,14 @@ public class StringCalculatorTest extends TestCase {
 		Assert.assertArrayEquals(new String[] {"1","2","3"}, result);
 	}
 	
-	
+	public void testToInt() throws Exception {
+		int[] result = cal.toInt(new String[] {"1","2"});
+		Assert.assertArrayEquals(new int[] {1,2}, result);
+		
+		result = cal.toInt(new String[] {});
+		Assert.assertArrayEquals(new int[] {}, result);
+		
+		result = cal.toInt(null);
+		Assert.assertArrayEquals(new int[] {}, result);		
+	}
 }
